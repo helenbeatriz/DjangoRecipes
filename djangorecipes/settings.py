@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+import dj_database_url
+
+if os.path.isfile("env.py"):
+   import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+t_9#!nzvcdv8^axlc(vmrohlysa@c&4je%(o85s@f^qz9mf25'
+SECRET_KEY = 'im(az1#h^q=j(7q=*i)awzu06=ra5#34)pdz)9%-0@m#p#gjky'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -74,10 +79,21 @@ WSGI_APPLICATION = 'djangorecipes.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'hlthbgbw',
+        'USER': 'hlthbgbw',
+        'PASSWORD': 'QpECwhs1-oPaVkt82D_wEKmpjXWqKsA5',
+        'HOST': 'trumpet.db.elephantsql.com',
+        'PORT': '5432',
     }
 }
 
