@@ -3,6 +3,8 @@
 import os
 import sys
 
+sys.path.extend(['/home/user/mymodules', '/workspace/djangorecipes'])
+
 
 def main():
     """Run administrative tasks."""
