@@ -3,7 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
-
+from django.shortcuts import render
 
 class PostList(generic.ListView):
     model = Post
@@ -76,3 +76,7 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+# def error_404(request, exception):
+#     return render(request, '404.html', status=404)
