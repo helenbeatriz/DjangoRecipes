@@ -1,9 +1,39 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
-from django.shortcuts import render
+from django.core.mail import send_mail
+from .forms import ContactForm
+from django.core.mail import EmailMessage
+from django.views.decorators.csrf import csrf_exempt
+from .forms import ContactForm
+
+@csrf_exempt
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+            email_subject = f'New message from {name}'
+            email_body = f'From: {email}\n\n{message}'
+            email = EmailMessage(
+                email_subject,
+                email_body,
+                'your_email@example.com',
+                ['recipient_email@example.com'],
+                reply_to=[email],
+            )
+            email.send()
+            return render(request, 'contact_success.html')
+    else:
+        form = ContactForm()
+    return render(request, 'contact.html', {'form': form})
+
+def contact_success(request):
+    return render(request, 'contact_success.html')
 
 class PostList(generic.ListView):
     model = Post
@@ -77,6 +107,9 @@ class PostLike(View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
+def error_404(request, exception):
+    return render(request, '404.html', status=404)
 
-# def error_404(request, exception):
-#     return render(request, '404.html', status=404)
+
+def about(request):
+    return render(request, 'about.html')

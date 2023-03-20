@@ -264,3 +264,14 @@ footer {
     color: #e27100;
     text-decoration: underline;
 }
+
+.contact-box {
+    display: table-caption;
+}
+
+.form-style{
+    opacity: 10;
+    margin-bottom: 20px;
+    background-color: #8080801a ;
+    font-family: var(--bs-font-sans-serif);
+}
