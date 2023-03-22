@@ -11,7 +11,7 @@
         <div class="col-md-8 mt-3 offset-md-2">
             <h3>{% trans "Sign In" %}</h3>
 
-            <p>{% blocktrans %}Welcome back to the code|star blog. To leave a comment or like a post, please log in. If
+            <p>{% blocktrans %}Welcome back to the code|star blog. To leave a comment or like a Post, please log in. If
                 you
                 have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
                 first.{% endblocktrans %}</p>
@@ -19,7 +19,7 @@
     </div>
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-            <form class="login" method="POST" action="{% url 'account_login' %}">
+            <form class="login" method="Post" action="{% url 'account_login' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
                 {% if redirect_field_value %}
@@ -40,7 +40,7 @@
             <p class="lead">Welcome to our cooking website, where you can find delicious recipes, cooking tips, and more. We're passionate about food and we're here to help you create amazing dishes that you'll love.</p>
             
             <h2 class="mb-3">Our Team</h2>
-            <p class="mb-4">Our team is made up of experienced chefs, food bloggers, and recipe creators who are dedicated to bringing you the best content possible. We're always working to improve our recipes and techniques so that you can make the most of your time in the kitchen.</p>
+            <p class="mb-4">Our team is made up of experienced chefs, food bloggers, and Post creators who are dedicated to bringing you the best content possible. We're always working to improve our recipes and techniques so that you can make the most of your time in the kitchen.</p>
             
             <h2 class="mb-3">Our Mission</h2>
             <p class="mb-4">Our mission is to inspire and empower home cooks to create amazing dishes that they can be proud of. We believe that everyone can be a great cook with the right tools, techniques, and inspiration, and we're here to provide all of that and more.</p>

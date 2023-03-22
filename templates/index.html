@@ -4,7 +4,7 @@
 
 <div id="header"> 
     <div class="header">
-        <!-- <h1>My Recipe Website</h1> -->
+        <!-- <h1>My Post Website</h1> -->
     </div>
 </div>
             <h2 class="section-heading">Featured Recipes</h2>
@@ -14,7 +14,7 @@
             <div class="card-text">
             <h3 class="card-heading">Spicy Shrimp Tacos</h3>
             <p class="card-body">These spicy shrimp tacos are perfect for a quick and easy dinner. The shrimp are marinated in a blend of spices and grilled to perfection. Served with fresh cilantro, lime, and avocado, they're a crowd pleaser. But that's not all – the shrimp are then grilled to perfection, creating a smoky, charred flavor that perfectly complements the spicy marinade.</p>
-            <a href="https://www.eatingwell.com/recipe/278474/spicy-shrimp-tacos/" class="button">Get the Recipe</a>
+            <a href="https://www.eatingwell.com/Post/278474/spicy-shrimp-tacos/" class="button">Get the Post</a>
             </div>
             </div>
             <div class="card">
@@ -22,7 +22,7 @@
             <div class="card-text">
             <h3 class="card-heading">Mediterranean Pasta Salad</h3>
             <p class="card-body">This refreshing pasta salad is perfect for a summer picnic or potluck. Made with fresh vegetables and a tangy dressing, it's a crowd-pleer. The pasta is tossed with cherry tomatoes, cucumber, red onion, and feta cheese, and then drizzled with a lemon vinaigrette. It's light, flavorful, and packed with nutrients. </p>
-            <a href="https://feelgoodfoodie.net/recipe/mediterranean-pasta-salad/" class="button">Get the Recipe</a>
+            <a href="https://feelgoodfoodie.net/Post/mediterranean-pasta-salad/" class="button">Get the Post</a>
             
             </div>
             </div>
@@ -31,7 +31,7 @@
             <div class="card-text">
             <h3 class="card-heading">Grilled Chicken with Mango Salsa</h3>
             <p class="card-body">This grilled chicken with mango salsa is a perfect combination of sweet and savory flavors. The chicken is marinated in a mixture of herbs and spices, then grilled to perfection. The mango salsa, made with fresh mango, red onion, and cilantro, adds a burst of flavor and freshness to the dish. They're so quick and easy to make.</p>
-            <a href="https://2cookinmamas.com/grilled-chicken-with-mango-salsa/" class="button">Get the Recipe</a>
+            <a href="https://2cookinmamas.com/grilled-chicken-with-mango-salsa/" class="button">Get the Post</a>
         </div>
             </div>
             </div>
@@ -48,28 +48,28 @@
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
-                {% for post in post_list %}
+                {% for Post in post_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                                {% if "placeholder" in post.featured_image.url %}
+                                {% if "placeholder" in Post.featured_image.url %}
                                 <img class="card-img-top"
                                     src="https://res.cloudinary.com/dvnmyhfxx/image/upload/v1678383446/cld-sample-4.jpg">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                                <img class="card-img-top" src=" {{ Post.featured_image.url }}">
                                 {% endif %}
                                 <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
+                                    <p class="author">Author: {{ Post.author }}</p>
                                 </div>
                             </div>
-                            <a href="{% url 'post_detail' post.slug  %}" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt }}</p>
+                            <a href="{% url 'post_detail' Post.slug  %}" class="Post-link">
+                                <h2 class="card-title">{{ Post.title }}</h2>
+                                <p class="card-text">{{ Post.excerpt }}</p>
                             </a>
                             <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
-                                {{ post.number_of_likes }}</p>
+                            <p class="card-text text-muted h6">{{ Post.created_on}} <i class="far fa-heart"></i>
+                                {{ Post.number_of_likes }}</p>
                         </div>
                     </div>
                 </div>

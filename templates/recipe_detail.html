@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ object.title }}</h1>
+  <p>{{ object.description }}</p>
+  <p>Ingredients: {{ object.ingredients }}</p>
+  <p>Directions: {{ object.directions }}</p>
+  <img src="{{ object.image.url }}" alt="{{ object.title }}">
+  {% if user == object.author %}
+    <a href="{% url 'Post-delete' object.id %}">Delete</a>
+  {% endif %}
+{% endblock %}

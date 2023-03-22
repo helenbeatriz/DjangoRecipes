@@ -5,14 +5,14 @@
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
-                <h1 class="post-title">{{ post.title }}</h1>
-                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+                <h1 class="Post-title">{{ Post.title }}</h1>
+                <p class="Post-subtitle">{{ Post.author }} | {{ Post.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                {% if "placeholder" in post.featured_image.url %}
+                {% if "placeholder" in Post.featured_image.url %}
                 <img src="https://res.cloudinary.com/dvnmyhfxx/image/upload/v1678714313/samples/food/pexels-maarten-van-den-heuvel-2284166_exznjr.jpg" width="100%">
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" width="40%">
+                <img src=" {{ Post.featured_image.url }}" width="40%">
                 {% endif %}
             </div>
         </div>
@@ -24,25 +24,25 @@
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
                 <p class="card-text ">
-                    {{ post.content | safe }}
+                    {{ Post.content | safe }}
                 </p>
                 <div class="row">
 
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                            <form class="d-inline" action="{% url 'post_like' Post.slug %}" method="Post">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{Post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{Post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
-                        <span class="text-secondary">{{ post.number_of_likes }} </span>
+                        <span class="text-secondary">{{ Post.number_of_likes }} </span>
                         </strong>
                     </div>
                     <div class="col-1">
@@ -90,7 +90,7 @@
 
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
-                <form method="post" style="margin-top: 1.3em;">
+                <form method="Post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
