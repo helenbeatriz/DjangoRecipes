@@ -4,7 +4,6 @@ from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
 from django.core.mail import send_mail
-from .forms import ContactForm
 from django.core.mail import EmailMessage
 from django.views.decorators.csrf import csrf_exempt
 from .forms import ContactForm

@@ -22,12 +22,11 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path("", include("blog.urls"), name="blog-urls"),
     path("accounts/", include("allauth.urls")),
+    path('', include('recipe_maker.urls')), 
     
 ]
 
 
 # Notes for me
-#  '/': This route maps to the RecipeListView view, which displays a list of all recipes.
-# 'Post/new/': This route maps to the RecipeCreateView view, which displays a form for creating a new Post.
 # 'Post/<int:pk>/': This route maps to the RecipeDetailView view, which displays a specific Post based on its primary key (PK) value.
 # 'Post/<int:pk>/delete/': This route maps to the RecipeDeleteView view, which displays a confirmation page for deleting a specific Post.

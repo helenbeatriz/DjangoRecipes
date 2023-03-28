@@ -1,6 +1,8 @@
 from . import views
 from django.urls import path, include
 from .views import contact, contact_success
+
+
 # from .views import error_404
 
 urlpatterns = [

@@ -55,9 +55,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
-    'djangorecipes',
     'crispy_forms',
     'blog',
+    'recipe_maker', 
 ]
 
 SITE_ID = 1
@@ -88,6 +88,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'djangorecipes.urls'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
 
 # settings.py
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
