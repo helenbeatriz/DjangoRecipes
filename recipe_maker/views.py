@@ -1,7 +1,17 @@
-from django.views import View
+from django.views.generic import CreateView
 from django.shortcuts import render
+from .models import Recipe
+from .forms import RecipeForm
 
-class Recipes(View):
-    def get(self, request):
-        # Your view logic here
-        return render(request, 'recipe_maker/recipes.html')
+class AddRecipe(CreateView):
+    """Add recipe view"""
+
+    template_name = "recipes/add_recipe.html"
+    model = Recipe
+    form_class = RecipeForm
+    success_url = "/recipes/"
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(AddRecipe, self).form_valid(form)
+
