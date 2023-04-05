@@ -29,6 +29,8 @@ body {
 .card {
     border: none;
     background-color: transparent;
+    height: 90%;
+    margin-top: 1rem;
 }
 
 .image-container {
@@ -271,4 +273,15 @@ footer {
     margin-bottom: 20px;
     background-color: #8080801a ;
     font-family: var(--bs-font-sans-serif);
+}
+
+/* Recipes */
+
+.recipes {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.recipes:hover {
+    cursor: pointer;
 }

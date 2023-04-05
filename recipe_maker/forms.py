@@ -20,10 +20,11 @@ class RecipeForm(forms.ModelForm):
             "calories",
         ]
 
-        widgets = {
+        ingredients = forms.CharField(widget=RichTextWidget())
+        instructions = forms.CharField(widget=RichTextWidget())
+
+        widget = {
             "description": forms.Textarea(attrs={"rows": 5}),
-            "ingredients": RichTextWidget(),
-            "instructions": RichTextWidget(),
         }
 
         labels = {
