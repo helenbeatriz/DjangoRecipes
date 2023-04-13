@@ -8,37 +8,16 @@
 </h1>
 <div class="container d-flex flex-row flex-wrap justify-content-center">
     {% for recipe in recipes %} 
-    <a href=" " class="recipes" aria-label="Click to view {{recipe.title}}">
-        <div class="card m-3" style="width: 18rem;">
+    <div class="card m-3" style="width: 18rem;">
             <img src="{{recipe.image.url}}" class="card-img-top" alt="{{recipe.image_alt}}">
             <div class="card-body">
               <h2 class="card-title">{{recipe.title}}</h2>
               <p class="card-text">{{recipe.description|truncatechars:100}}</p>
+              <a href="{% url 'recipe_maker:recipe_detail' recipe.pk %}">View Recipe</a>
             </div>
         </div>
+        
     </a>
     {% endfor %}
 </div>
 {% endblock %}
-
-<!-- when I add :  {% url 'recipe_detail' recipe_maker.slug %} it come back a bu saying NoReverseMatch at /recipes/
-Reverse for 'recipe_detail' not found. 'recipe_detail' is not a valid view function or pattern name.
-Request Method:	GET
-Request URL:	http://localhost:8000/recipes/
-Django Version:	3.2.18
-Exception Type:	NoReverseMatch
-Exception Value:	
-Reverse for 'recipe_detail' not found. 'recipe_detail' is not a valid view function or pattern name.
-Exception Location:	/workspace/.pyenv_mirror/user/current/lib/python3.8/site-packages/django/urls/resolvers.py, line 698, in _reverse_with_prefix
-Python Executable:	/home/gitpod/.pyenv/versions/3.8.16/bin/python
-Python Version:	3.8.16
-Python Path:	
-['/workspace/DjangoRecipes',
- '/home/gitpod/.pyenv/versions/3.8.16/lib/python38.zip',
- '/home/gitpod/.pyenv/versions/3.8.16/lib/python3.8',
- '/home/gitpod/.pyenv/versions/3.8.16/lib/python3.8/lib-dynload',
- '/workspace/.pyenv_mirror/user/current/lib/python3.8/site-packages',
- '/home/gitpod/.pyenv/versions/3.8.16/lib/python3.8/site-packages',
- '/home/user/mymodules',
- '/workspace/djangorecipes']
-Server time:	Wed, 12 Apr 2023 15:43:22 +0000 -->

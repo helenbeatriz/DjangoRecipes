@@ -162,7 +162,7 @@ footer {
 
 /* Homepage */
 .header {
-    background-image: url('https://res.cloudinary.com/dvnmyhfxx/image/upload/v1678383424/samples/food/pot-mussels.jpg');
+    background-image: url('https://res.cloudinary.com/dvnmyhfxx/image/upload/v1681402770/iStock_58717870_XLARGE_zshkdt.jpg');
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -285,3 +285,4 @@ footer {
 .recipes:hover {
     cursor: pointer;
 }
+
