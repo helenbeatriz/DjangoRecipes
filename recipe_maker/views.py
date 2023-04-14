@@ -1,6 +1,6 @@
-from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic import CreateView, ListView, DetailView, DeleteView, UpdateView
 
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 from django.shortcuts import render
 from .models import Recipe
@@ -44,4 +44,22 @@ class AddRecipe(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
         return super(AddRecipe, self).form_valid(form)
 
- 
+
+class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    template_name = "recipe_confirm_delete.html"
+    model = Recipe
+    context_object_name = "recipe"
+    success_url = "/recipes/"
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
+
+class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """Edit a recipe"""
+    template_name = 'edit_recipe.html'
+    model = Recipe
+    form_class = RecipeForm
+    success_url = '/recipes/'
+    
+    def test_func(self):
+        return self.request.user == self.get_object().user
