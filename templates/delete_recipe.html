@@ -3,10 +3,25 @@
 {% block title %}Delete Recipe{% endblock %}
 
 {% block content %}
-  <h2>Confirm Delete</h2>
-  <form method="post">
-    {% csrf_token %}
-    <p>Are you sure you want to delete "{{ recipe.title }}"?</p>
-    <input type="submit" value="Delete">
-  </form>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="text-center">Confirm Delete</h2>
+        </div>
+        <div class="card-body">
+          <form method="post">
+            {% csrf_token %}
+            <p>Are you sure you want to delete "{{ recipe.title }}"?</p>
+            <div class="text-center">
+              <input type="submit" class="btn btn-danger" value="Delete">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

@@ -2,10 +2,6 @@
 
 {% block content %}
 
-<!-- <div id="header"> 
-  <div class="header"></div>
-</div> -->
-
 <header class="bg-dark py-5">
   <div class="container">
     <div class="row align-items-center">
@@ -15,19 +11,32 @@
         <a href="#" class="btn btn-light">Browse Recipes</a>
       </div>
       <div class="col-md-6">
-        <img src="https://res.cloudinary.com/dvnmyhfxx/image/upload/v1681401848/media/recipes/Kung-Pao-Chicken-16-scaled_ne1jde.webp" alt="Recipe Blog" class="img-fluid">
       </div>
     </div>
   </div>
 </header>
 
-<h2 class="section-heading">Tips posted by our users </h2>
+<div class="container my-5">
+  <h1 class="text-center mb-5">About Our Website</h1>
+  <div class="row">
+    <div class="col-lg-6 mb-5">
+      <img src="https://res.cloudinary.com/dvnmyhfxx/image/upload/v1678719048/ixrfbvto29cirbwrl0pp.jpg" alt="About Us" class="img-fluid rounded">
+    </div>
 
-<main class="flex-shrink-0 main-bg">
+    <div class="col-lg-6">
+      <p class="lead">Welcome to our cooking website, where you can find delicious recipes, cooking tips, and more. We're passionate about food and we're here to help you create amazing dishes that you'll love.</p>
+
+      <h2 class="mb-3" id="team">Our Team</h2>
+      <p class="mb-4">Our team is made up of experienced chefs, food bloggers, and Post creators who are dedicated to bringing you the best content possible. We're always working to improve our recipes and techniques so that you can make the most of your time in the kitchen.</p>
+
+      <h2 class="mb-3" id="mission">Our Mission</h2>
+      <p class="mb-4">Our mission is to inspire and empower home cooks to create amazing dishes that they can be proud of. We believe that everyone can be a great cook with the right tools, techniques, and inspiration, and we're here to provide all of that and more.</p>
+
+<main class="main-bg">
   <div class="container-fluid">
-    <div class="row">
+    <h2 class="section-heading">Tips posted by our users</h2>
 
-      <!-- Blog Entries Column -->
+    <div class="row">
       <div class="col-12 mt-3 left">
         <div class="row">
           {% for post in post_list %}
@@ -61,18 +70,21 @@
         </div>
       </div>
     </div>
+
     {% if is_paginated %}
     <nav aria-label="Page navigation">
       <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
-            {% endif %}
-        </ul>
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link">NEXT &raquo;</a></li>
+        {% endif %}
+      </ul>
     </nav>
     {% endif %}
-</div>
-{%endblock%}
+
+  </div>
+</main>
+
+{% endblock %}
