@@ -34,14 +34,14 @@ def contact(request):
 def contact_success(request):
     return render(request, 'contact_success.html')
 
-class PostList(generic.ListView):
+class PostListView(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
     paginate_by = 6
 
 
-class PostDetail(View):
+class PostDetailView(View):
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
@@ -95,7 +95,7 @@ class PostDetail(View):
         )
 
 
-class PostLike(View):
+class AddLikePost(View):
     
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
@@ -109,6 +109,8 @@ class PostLike(View):
 def error_404(request, exception):
     return render(request, '404.html', status=404)
 
+def error_403(request, exception):
+    return render(request, "403.html", status=403)
 
 def about(request):
     return render(request, 'about.html')

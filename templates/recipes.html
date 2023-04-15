@@ -1,20 +1,20 @@
-{% extends "base.html" %}
+{% extends "base.html" %} <!-- extends the base template -->
 
-{% block title %}Recipes{% endblock %}
+{% block title %}Recipes{% endblock %} <!-- sets the title of the page to "Recipes" -->
 
 {% block content %}
 
 <div class="container mt-5">
-    <h1 class="text-center mb-5">Latest Recipes</h1>
+    <h1 class="text-center mb-5">Latest Recipes</h1> <!-- displays the heading "Latest Recipes" -->
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        {% for recipe in recipes %} 
+        {% for recipe in recipes %} <!-- loops through all recipes passed to the template -->
         <div class="col">
             <div class="card h-100">
-                <img src="{{recipe.image.url}}" class="card-img-top" alt="{{recipe.image_alt}}">
+                <img src="{{recipe.image.url}}" class="card-img-top" alt="{{recipe.image_alt}}"> <!-- displays the recipe image and alt text -->
                 <div class="card-body">
-                    <h2 class="card-title">{{recipe.title}}</h2>
-                    <p class="card-text">{{recipe.description|truncatechars:100}}</p>
-                    <a href="{% url 'recipe_maker:recipe_detail' recipe.pk %}" class="btn btn-primary">View Recipe</a>
+                    <h2 class="card-title">{{recipe.title}}</h2> <!-- displays the recipe title -->
+                    <p class="card-text">{{recipe.description|truncatechars:100}}</p> <!-- displays a truncated version of the recipe description -->
+                    <a href="{% url 'recipe_maker:recipe_detail' recipe.pk %}" class="btn btn-primary">View Recipe</a> <!-- displays a button to view the recipe details page -->
                 </div>
             </div>
         </div>

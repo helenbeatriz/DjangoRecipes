@@ -1,35 +1,25 @@
+# Importing required modules
 from django.db import models
 from django.contrib.auth.models import User
-
 from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
 
-
-# Choice Fields
-MEAL_TYPES = (("breakfast", "Breakfast"), ("lunch", "Lunch"), ("dinner", "Dinner"))
-
+# Defining choice fields
+DIFFICULTY_LEVEL = (("easy", "Easy"), ("Medium", "Medium"), ("hard", "Hard"))
 CUISINE_TYPES = (
     ("african", "African"),
     ("american", "American"),
-    ("caribbean", "Caribbean"),
     ("asian", "Asian"),
     ("middle_eastern", "Middle Eastern"),
-    ("chinese", "Chinese"),
+    ("brazilian", "Brazilian"),
     ("indian", "Indian"),
-    ("pakistani", "Pakistani"),
-    ("indonesian", "Indonesian"),
     ("european", "European"),
 )
 
-
+# Creating a Recipe model to manage and create recipes
 class Recipe(models.Model):
-    """
-    A model to create and manage recipes
-    """
-
-    user = models.ForeignKey(
-        User, related_name="recipe_owner", on_delete=models.CASCADE
-    )
+    # Defining fields for Recipe model
+    user = models.ForeignKey(User, related_name="recipe_owner", on_delete=models.CASCADE)
     title = models.CharField(max_length=300, null=False, blank=False)
     description = models.CharField(max_length=500, null=False, blank=False)
     instructions = RichTextField(max_length=10000, null=False, blank=False)
@@ -43,15 +33,17 @@ class Recipe(models.Model):
         null=False,
     )
     image_alt = models.CharField(max_length=100, null=False, blank=False)
-    meal_type = models.CharField(max_length=50, choices=MEAL_TYPES, default="breakfast")
+    meal_type = models.CharField(max_length=50, choices=DIFFICULTY_LEVEL, default="easy")
     cuisine_types = models.CharField(
         max_length=50, choices=CUISINE_TYPES, default="african"
     )
     calories = models.IntegerField()
     posted_date = models.DateTimeField(auto_now=True)
 
+    # Defining meta options for Recipe model
     class Meta:
         ordering = ["-posted_date"]
 
+    # Defining a string representation for Recipe model
     def __str__(self):
         return str(self.title)

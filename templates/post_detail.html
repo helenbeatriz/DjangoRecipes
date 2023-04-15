@@ -1,103 +1,106 @@
-{% extends 'base.html' %} {% block content %}
-{% load crispy_forms_tags %}
-<div class="masthead">
-    <div class="container-sm">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
-                <h1 class="post-title">{{ post.title }}</h1>
-                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+{% extends 'base.html' %} <!-- Extends the base HTML template -->
+{% block content %} <!-- Defines a content block in the HTML -->
+{% load crispy_forms_tags %} <!-- Loads crispy forms for formatting -->
+
+<div class="masthead"> <!-- Creates a container for the header section -->
+    <div class="container-sm"> <!-- Creates a small container for the header section -->
+        <div class="row g-0"> <!-- Creates a row with no gutters for the header section -->
+            <div class="col-md-6 masthead-text"> <!-- Creates a column for the header text -->
+                <h1 class="post-title">{{ post.title }}</h1> <!-- Displays the post title -->
+                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p> <!-- Displays the post author and creation date -->
             </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                {% if "placeholder" in post.featured_image.url %}
-                <img src="https://res.cloudinary.com/dvnmyhfxx/image/upload/v1678719048/ixrfbvto29cirbwrl0pp.jpg" alt="cooking related image" width="100%">
+            <div class="d-none d-md-block col-md-6 masthead-image"> <!-- Creates a column for the header image (hidden on small screens) -->
+                {% if "placeholder" in post.featured_image.url %} <!-- Checks if the featured image is a placeholder -->
+                <img src="https://res.cloudinary.com/dvnmyhfxx/image/upload/v1678719048/ixrfbvto29cirbwrl0pp.jpg" alt="cooking related image" width="100%"> <!-- Displays a default cooking image -->
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%">
+                <img src=" {{ post.featured_image.url }}" width="100%"> <!-- Displays the featured image of the post -->
                 {% endif %}
             </div>
         </div>
     </div>
 </div>
 
-
-<div class="container-sm">
+<div class="container-sm"> <!-- Creates a small container for the post content -->
     <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
+        <div class="col card mb-4 mt-3 left top"> <!-- Creates a column for the post content and style it as a card -->
             <div class="card-body">
                 <p class="card-text ">
-                    {{ post.content | safe }}
+                    {{ post.content | safe }} <!-- Displays the post content safely (without escaping HTML tags) -->
                 </p>
                 <div class="row">
-
-                    <div class="col-1">
                         <strong>
-                            {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                            {% if user.is_authenticated %} <!-- Checks if the user is authenticated (logged in) -->
+                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST"> <!-- Creates a form to like the post -->
                                 {% csrf_token %}
-                                {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                                {% if liked %} <!-- Checks if the post is already liked by the user -->
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button> <!-- Displays a filled heart icon if the post is liked -->
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button> <!-- Displays an empty heart icon if the post is not liked -->
                                 {% endif %}
                             </form>
                             {% else %}
-                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                            <span class="text-secondary"><i class="far fa-heart"></i></span> <!-- Displays an empty heart icon if the user is not logged in -->
                             {% endif %}
-                        <span class="text-secondary">{{ post.number_of_likes }} </span>
+                        <span class="text-secondary">{{ post.number_of_likes }} </span> <!-- Displays the number of likes of the post -->
                         </strong>
                     </div>
-                    <div class="col-1">
-                        {% with comments.count as total_comments %}
+                        {% with comments.count as total_comments %} <!-- Gets the total number of comments -->
                         <strong class="text-secondary"><i class="far fa-comments"></i>
                             {{ total_comments }}</strong>
-                        {% endwith %}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <hr>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 ">
-            <h3>Comments:</h3>
-            <div class="card-body">
-                {% for comment in comments %}
-                <div class="comments" style="padding: 10px;">
-                    <p class="font-weight-bold">
-                        {{ comment.name }}
-                        <span class=" text-muted font-weight-normal">
-                            {{ comment.created_on }}
-                        </span> wrote:
-                    </p>
-                    {{ comment.body | linebreaks }}
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="col-md-4 card mb-4  mt-3 ">
-            <div class="card-body">
-                {% if commented %}
-                <div class="alert alert-success" role="alert">
-                    Your comment is awaiting approval
-                </div>
-                {% else %}
-                {% if user.is_authenticated %}
-
-                <h3>Leave a comment:</h3>
-                <p>Posting as: {{ user.username }}</p>
-                <form method="post" style="margin-top: 1.3em;">
-                    {{ comment_form | crispy }}
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                </form>
-                {% endif %}
-                {% endif %}
-            </div>
-        </div>
-    </div>
-</div>
-
-{% endblock content %}
+                            {% endwith %}   <!-- End of a with statement, which defines a context for a block of code -->
+                            <div class="container mt-3">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <!-- Some HTML code for a blog post -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <hr>  <!-- Horizontal line separator -->
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8 card mb-4 mt-3">
+                                        <h3>Comments:</h3>
+                                        <div class="card-body">
+                                            {% for comment in comments %}  <!-- Loop through all comments -->
+                                            <div class="comments" style="padding: 10px;">
+                                                <p class="font-weight-bold">
+                                                    {{ comment.name }}  <!-- Display the name of the commenter -->
+                                                    <span class="text-muted font-weight-normal">
+                                                        {{ comment.created_on }}  <!-- Display the date the comment was created -->
+                                                    </span> wrote:
+                                                </p>
+                                                {{ comment.body | linebreaks }}  <!-- Display the comment text with line breaks -->
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 card mb-4 mt-3">
+                                        <div class="card-body">
+                                            {% if commented %}  <!-- If the user's comment is awaiting approval -->
+                                            <div class="alert alert-success" role="alert">
+                                                Your comment is awaiting approval
+                                            </div>
+                                            {% else %}
+                                            {% if user.is_authenticated %}  <!-- If the user is logged in -->
+                                            <h3>Leave a comment:</h3>
+                                            <p>Posting as: {{ user.username }}</p>  <!-- Display the username of the logged-in user -->
+                                            <form method="post" style="margin-top: 1.3em;">
+                                                {{ comment_form | crispy }}  <!-- Display a form for submitting a comment -->
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                                            </form>
+                                            {% endif %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            {% endblock content %}  <!-- End of a content block, typically used in Django templates -->
+                            

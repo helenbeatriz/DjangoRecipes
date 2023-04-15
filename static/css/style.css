@@ -269,14 +269,3 @@ a:hover {
     font-family: var(--bs-font-sans-serif);
 }
 
-/* Recipes */
-
-.recipes {
-    text-decoration: none;
-    color: var(--black);
-}
-
-.recipes:hover {
-    cursor: pointer;
-}
-

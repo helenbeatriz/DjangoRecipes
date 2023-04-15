@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from recipe_maker.views import AddRecipe, Recipes
+from recipe_maker.views import RecipeCreateView, Recipes
 
 
 urlpatterns = [
@@ -25,12 +25,12 @@ urlpatterns = [
     path('djrichtextfield/', include('djrichtextfield.urls')),
     path("accounts/", include("allauth.urls")),
     path("", include("recipe_maker.urls"), name="recipe_maker-urls"),
-    path('add_recipe/', AddRecipe.as_view(), name='add_recipe'),
+    path('add_recipe/', RecipeCreateView.as_view(), name='add_recipe'),
     path('recipes/', Recipes.as_view(), name='recipes'),
 
     ]
 
 
 # Notes for me
-# 'Post/<int:pk>/': This route maps to the RecipeDetailView view, which displays a specific Post based on its primary key (PK) value.
+# 'Post/<int:pk>/': This route maps to the RecipeDetailViewView view, which displays a specific Post based on its primary key (PK) value.
 # 'Post/<int:pk>/delete/': This route maps to the RecipeDeleteView view, which displays a confirmation page for deleting a specific Post.
