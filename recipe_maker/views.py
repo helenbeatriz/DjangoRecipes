@@ -12,21 +12,6 @@ class Recipes(ListView):
     model = Recipe
     context_object_name = "recipes"
 
-    def get_queryset(self, **kwargs):
-        # Get the search query from the URL parameter
-        query = self.request.GET.get("q")
-        if query:
-            # Filter the recipes by the search query if it exists
-            recipes = self.model.objects.filter(
-                Q(title__icontains=query)
-                | Q(description__icontains=query)
-                | Q(instructions__icontains=query)
-                | Q(cuisine_types__icontains=query)
-            )
-        else:
-            # Return all the recipes if there is no search query
-            recipes = self.model.objects.all()
-        return recipes
 
 # Display the details of a recipe
 class RecipeDetailView(DetailView):
@@ -68,3 +53,4 @@ class RecipeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def test_func(self):
         # Check if the current user is the user who created the recipe
         return self.request.user == self.get_object().user 
+
