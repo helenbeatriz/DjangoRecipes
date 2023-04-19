@@ -11,7 +11,6 @@ class RecipeAdmin(admin.ModelAdmin):
         "description",
         "meal_type",
         "cuisine_types",
-        "calories",
         "posted_date",
     )
     

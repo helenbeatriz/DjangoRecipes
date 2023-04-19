@@ -78,7 +78,6 @@ class Migration(migrations.Migration):
                         max_length=50,
                     ),
                 ),
-                ("calories", models.IntegerField()),
                 ("posted_date", models.DateTimeField(auto_now=True)),
                 (
                     "user",

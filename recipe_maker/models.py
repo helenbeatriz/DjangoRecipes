@@ -37,7 +37,6 @@ class Recipe(models.Model):
     cuisine_types = models.CharField(
         max_length=50, choices=CUISINE_TYPES, default="african"
     )
-    calories = models.IntegerField()
     posted_date = models.DateTimeField(auto_now=True)
 
     # Defining meta options for Recipe model

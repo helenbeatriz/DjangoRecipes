@@ -19,7 +19,6 @@ class RecipeForm(forms.ModelForm):
             "image_alt",
             "meal_type",
             "cuisine_types",
-            "calories",
         ]
 
         # Defines the widgets to use for the "ingredients" and "instructions" fields
@@ -41,5 +40,4 @@ class RecipeForm(forms.ModelForm):
             "image_alt": "Describe Image",
             "meal_type": "Meal Type",
             "cuisine_types": "Cuisine Type",
-            "calories": "Calories",
         }
