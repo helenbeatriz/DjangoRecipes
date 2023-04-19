@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
-<body> 
-    <main class="error"> 
-        <h1 class="errorfour">404</h1>
-        <h2 class="errorfour"> PAGE NOT FOUND </h2>
-        <p><a class="homereturn" href="base.html">Return to main website</a></p>
-         </main>
-</body>
+{% block content %}
+
+<h1 class="errorfour">404</h1>
+<h2 class="errorfour"> PAGE NOT FOUND </h2>
+<p><a class="homereturn" href="base.html">Return to main website</a></p>
+
+{% endblock %}
