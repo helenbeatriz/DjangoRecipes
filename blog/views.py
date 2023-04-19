@@ -100,3 +100,9 @@ def error_403(request, exception):
 
 def about(request):
     return render(request, 'about.html')
+
+def server_error(request, template_name='500.html'):
+    return render(request, template_name, status=500)
+
+def bad_request(request, exception):
+    return render(request, '400.html', status=400)

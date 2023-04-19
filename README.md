@@ -96,31 +96,6 @@ git push - Pushes all committed code to the remote repository on GitHub.
 The User and Session tables provide authentication functionality for the website. Users can create an account, log in, and log out of the website. Sessions are used to keep users logged in between requests.
 <img src="https://res.cloudinary.com/dvnmyhfxx/image/upload/v1681914839/Untitled_fhrdyq.png">
 
-**External Python Modules**
-
- asgiref==3.6.0
-cloudinary==1.32.0
-dj-database-url==1.2.0
-dj3-cloudinary-storage==0.0.6
-Django==3.2.18
-django-allauth==0.52.0
-django-cloudinary-storage==0.3.0
-django-crispy-forms==1.14.0
-django-resized==1.0.2
-django-richtextfield==1.6.1
-django-summernote==0.8.20.0
-gunicorn==20.1.0
-migrate==0.3.8
-numpy==1.24.2
-oauthlib==3.2.2
-Pillow==9.4.0
-psycopg2==2.9.5
-PyJWT==2.6.0
-python3-openid==3.2.0
-pytz==2022.7.1
-requests-oauthlib==1.3.1
-sqlparse==0.4.3
-
 
 * Recipe Data:
 The Recipe, Category, Ingredient, and Instruction tables represent the data related to recipes on the website. Recipes have a title, description, image, servings, difficulty, author, category, creation and lists of ingredients and instructions.
@@ -289,6 +264,30 @@ The following models represent the database model structure for the website:
 - Django 3.2.16
 
 
+**External Python Modules**
+
+- asgiref==3.6.0
+- cloudinary==1.32.0
+- dj-database-url==1.2.0
+- dj3-cloudinary-storage==0.0.6
+- Django==3.2.18
+- django-allauth==0.52.0
+- django-cloudinary-storage==0.3.0
+- django-crispy-forms==1.14.0
+- django-resized==1.0.2
+- django-richtextfield==1.6.1
+- django-summernote==0.8.20.0
+- gunicorn==20.1.0
+- migrate==0.3.8
+- numpy==1.24.2
+- oauthlib==3.2.2
+- Pillow==9.4.0
+- psycopg2==2.9.5
+- PyJWT==2.6.0
+- python3-openid==3.2.0
+- pytz==2022.7.1
+- requests-oauthlib==1.3.1
+- sqlparse==0.4.3
 ### Libraries & Tools
 
 - [Am I Responsive](http://ami.responsivedesign.is/) was used to create the multi-device mock-up at the top of this README.md file
