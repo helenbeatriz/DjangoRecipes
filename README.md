@@ -99,7 +99,7 @@ git push - Pushes all committed code to the remote repository on GitHub.
 ## Schema
 * User Authentication:
 The User and Session tables provide authentication functionality for the website. Users can create an account, log in, and log out of the website. Sessions are used to keep users logged in between requests.
-<img src="https://res.cloudinary.com/dvnmyhfxx/image/upload/v1681914839/Untitled_fhrdyq.png">
+<img src="https://res.cloudinary.com/dvnmyhfxx/image/upload/v1681921545/Untitled_2_v7yzsd.png">
 
 
 * Recipe Data:
