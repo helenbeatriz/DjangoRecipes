@@ -2,7 +2,7 @@
 Welcome to the Recipe Sharing Blog, a platform for food enthusiasts to share and discover delicious recipes from around the world.
 <img src="https://res.cloudinary.com/dvnmyhfxx/image/upload/v1681915441/mockup_khyhpr.png">
 
-💻 [Visit live website](https://djangorecipes.herokuapp.com//)
+💻 [Visit live website](https://djangorecipes.herokuapp.com/)
 
  
 ## Features
