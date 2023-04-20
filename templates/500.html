@@ -1,10 +1,11 @@
-
 {% extends 'base.html' %}
 
 {% block content %}
-<section id="error">
-    <h1><span>500</span><br />Server error</h1>
-
-    <a href="/">Go home</a>
+<section class="d-flex flex-column align-items-center justify-content-center" style="height: 80vh;">
+  <div class="text-center">
+    <h1 class="display-1"><span class="text-danger">500</span><br>Server Error</h1>
+    <p class="lead my-4">Sorry, something went wrong with the server. Please try again later.</p>
+    <a class="btn btn-primary" href="/" role="button">Go Home</a>
+  </div>
 </section>
 {% endblock %}

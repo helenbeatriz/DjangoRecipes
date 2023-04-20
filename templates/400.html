@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section id="error">
-    <h1><span>400</span><br />Bad request</h1>
-
-    <a href="/">Go home</a>
+<section class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
+  <div class="text-center">
+    <h1 class="display-1"><span class="text-danger">400</span><br>Bad request</h1>
+    <a href="/" class="btn btn-lg btn-primary mt-3">Go home</a>
+  </div>
 </section>
 {% endblock %}
