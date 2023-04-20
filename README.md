@@ -70,25 +70,25 @@ Future Feature Implementation:
 In future releases, a chat and conversations with bloggers would be available. 
 
 ### Base Setup 
-*As a developer, I need to create the base.html page and structure so that other pages can reuse the layout
-*As a developer, I need to create static resources so that images, css and javascript work on the website
-*As a developer, I need to set up the project so that it is ready for implementing the core features
-*As a developer, I need to create the footer with social media links and contact information
-*As a developer, I need to create the navbar so that users can navigate the website from any device.
+* As a developer, I need to create the base.html page and structure so that other pages can reuse the layout
+* As a developer, I need to create static resources so that images, css and javascript work on the website
+* As a developer, I need to set up the project so that it is ready for implementing the core features
+* As a developer, I need to create the footer with social media links and contact information
+* As a developer, I need to create the navbar so that users can navigate the website from any device.
 
 ### Stand alone Pages
-*As a developer, I need to implement a 404 error page to alert users when they have accessed a page that doesn't exist
-*As a developer, I need to implement a 500 error page to alert users when an internal server error occurs
-*As a developer, I need to implement a 403 error page to redirect unauthorised users to so that I can secure my views
-*As a user, I would like to see a homepage where I can browse through the latest recipes and view featured recipes.
+* As a developer, I need to implement a 404 error page to alert users when they have accessed a page that doesn't exist
+* As a developer, I need to implement a 500 error page to alert users when an internal server error occurs
+* As a developer, I need to implement a 403 error page to redirect unauthorised users to so that I can secure my views
+* As a user, I would like to see a homepage where I can browse through the latest recipes and view featured recipes.
 
 ### Authentication 
-*As a user, I want to create an account so that I can save my favorite recipes and create shopping lists.
-*As a site owner, I want users to verify their email when registering an account so that I can ensure that a valid email address is being used.
-*As a site owner, I would like the login and registration pages customized to that they fit in with the sites styling.
+* As a user, I want to create an account so that I can save my favorite recipes and create shopping lists.
+* As a site owner, I want users to verify their email when registering an account so that I can ensure that a valid email address is being used.
+* As a site owner, I would like the login and registration pages customized to that they fit in with the sites styling.
 
 ### Recipe Management
-*As a user, I want to be able to search and browse through a variety of recipes so that I can discover new dishes to try.
+* As a user, I want to be able to search and browse through a variety of recipes so that I can discover new dishes to try.
 
 ### DeploymentVersion Control
 This recipe sharing blog was developed using Visual Studio Code and version controlled using Git. The code was pushed to a remote repository named 'Gars-Steakhouse' on GitHub. The following Git commands were used to push code to the remote repo:
