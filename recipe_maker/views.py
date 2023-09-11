@@ -55,8 +55,15 @@ class RecipeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = 'edit_recipe.html'
     model = Recipe
     form_class = RecipeForm
-    success_url = '/recipes/'
+
+    def get_success_url(self):
+        return reverse_lazy('recipe_maker:recipe_detail', kwargs={'pk': self.object.pk})
     
     def test_func(self):
         # Check if the current user is the user who created the recipe
-        return self.request.user == self.get_object().user 
+        return self.request.user == self.get_object().user
+
+    def form_valid(self, form):
+        # Add a success message
+        messages.success(self.request, 'Recipe updated successfully!')
+        return super(RecipeUpdateView, self).form_valid(form)
