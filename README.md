@@ -4,7 +4,86 @@ Welcome to the Recipe Sharing Blog, a platform for food enthusiasts to share and
 
 💻 [Visit live website](https://djangorecipes.herokuapp.com/)
 
- 
+ ## Introduction
+
+Thank you for joining our user testing phase for the Recipe Sharing Blog. Your objective is to explore the website, perform specific tasks, and provide feedback based on your experience. Your input will help us identify any issues, usability concerns, or suggestions for improvement.
+
+Please follow the instructions below to participate in the user testing.
+
+## How to Participate
+
+1. **Access the Website:**
+   - Go to the live website: [Recipe Sharing Blog](https://djangorecipes.herokuapp.com/)
+   - Use a modern web browser for the best experience (e.g., Chrome, Firefox, Safari).
+
+2. **Explore the Website:**
+   - Spend some time navigating through the website.
+   - Try different features and pages, such as browsing recipes, adding a recipe, editing a recipe, and using the search functionality.
+
+3. **Perform Testing Scenarios:**
+   - Refer to the [Testing Scenarios](#testing-scenarios) section below to find specific tasks to complete.
+   - Follow the instructions for each scenario and provide feedback on your experience.
+
+4. **Report Issues:**
+   - If you encounter any bugs, usability issues, or have suggestions for improvement, please report them as described in the [Reporting Issues](#reporting-issues) section below.
+
+5. **Share Your Overall Impressions:**
+   - After completing the testing scenarios, feel free to share your overall impressions of the website. Is there anything you particularly liked or disliked?
+
+## Testing Scenarios
+
+Please complete the following testing scenarios. After each scenario, provide feedback on your experience, including any issues you encountered, and any suggestions for improvement.
+
+### Scenario 1: User Registration
+
+1. Click on the "Register" button in the navigation bar.
+2. Complete the registration form by providing a valid username, password, and email address.
+3. Confirm your registration and log in.
+
+### Scenario 2: Browsing Recipes
+
+1. Navigate to the "Recipes" page.
+2. Use the search functionality to find a recipe by keyword.
+3. Browse through the list of recipes and click on one to view its details.
+4. Share your experience with searching and browsing recipes. 
+
+### Scenario 3: Adding a Recipe
+
+1. Log in to your account (if not already logged in).
+2. Navigate to the "Add Recipe" page.
+3. Fill out the recipe details, including title, ingredients, instructions, and an image.
+4. Submit the new recipe.
+
+### Scenario 4: Editing a Recipe
+
+1. Log in to your account (if not already logged in).
+2. Navigate to the "Recipes" page.
+3. Find a recipe you added previously and click on it.
+4. Click the "Edit" button.
+5. Make changes to the recipe details and save.
+
+### Scenario 5: Contacting Support
+
+1. Navigate to the "Contact" page.
+2. Use the contact form to send a message to the site admin.
+3. Provide feedback on the contact form's usability and clarity.
+
+## Reporting Issues
+
+To report any issues, usability concerns, or suggestions for improvement, please follow these steps:
+
+1. Contact us, fill the form and click on "Submit" button. 
+2. Get in touch with us. 
+
+
+We appreciate your contributions to improving our website!
+
+## Contact Information
+
+If you have any urgent questions or need assistance during the user testing phase, please feel free to contact Helen Beatriz Cantu de Avila at [helen_beatriz02@outlook.com].
+
+Thank you for participating in the Recipe Sharing Blog user testing!
+
 ## Features
 
 ### Footer 
@@ -25,6 +104,36 @@ A site-wide favicon has been added to provide an image in the browser's tab head
 
 ### Base Setup
 The base setup epic is for all stories needed for the base set up of the application. Without the base setup, the app would not be possible so it was the first epic to be delivered as all other features depend on the completion of the base setup.
+
+### Contact Form Wireframe
+
+ <img src="media /contactwireframe.png">
+
+ The contact form will be a simple web form with fields for the user to input their name, email address, subject, and message.
+It will have a "Submit" button at the bottom to send the message.
+
+### Main Page Wireframe 
+The main page will have a header section containing the website logo and navigation bar with links to various sections of the website (Home, Categories, Recipes, Login/Register, Contact).
+Below the header, there will be a welcome section with a brief description of the website's purpose and a call-to-action button to encourage users to explore recipes.
+Featured recipes can be displayed in a grid format below the welcome section, with images and titles, possibly with a "View Recipe" button.
+Sections for the most popular recipes, recent categories, and recent articles can be added further down the page, each with a title and a list of items (recipes, categories, articles) with links or buttons to view more.
+At the bottom of the page, you can include a footer with links to social media profiles and tips posted by users.
+
+<img src="media /wireframecomputer.png">
+<img src="media /wireframephone.png ">
+
+### Recipes Wireframe 
+
+The recipes page will have a header similar to the main page with the logo and navigation bar.
+Below the header, there can see the recipes and description.  
+The main content of the page will display a list of recipes, each in a card format.
+Each recipe card will include an image, title, short description.
+Users can click on a recipe card to view the full recipe details on a separate page.
+Pagination or infinite scroll can be used if there are many recipes to display.
+At the bottom of the page,  footer with social media links and contact information as on the main page.
+
+<img src="media /recipewireframe.png ">
+
 
 ### Technologies Used
 - HTML

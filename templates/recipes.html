@@ -21,4 +21,17 @@
         {% endfor %}
     </div>
 </div>
+
+<!-- Add the code for displaying toast messages -->
+{% if messages %}
+<div id="toast-container" class="toast-top-right">
+    {% for message in messages %}
+    <div class="toast toast-{{ message.tags }}">
+        <button type="button" class="toast-close-button" onclick="this.parentElement.style.display='none'">&times;</button>
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
 {% endblock %}

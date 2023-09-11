@@ -28,8 +28,8 @@
               </div>
               {% if request.user == recipe.user %} 
               <div class="text-center mt-3">
-                <a href="{% url 'recipe_maker:edit_recipe' recipe.pk %}" class="btn btn-primary w-25 me-3">Edit</a>
-                <a href="{% url 'recipe_maker:delete_recipe' recipe.pk %}" class="btn btn-danger w-25">Delete</a>
+                <a href="{% url 'recipe_maker:edit_recipe' recipe.pk %}" class="btn btn-primary me-3">Edit</a>
+                <a href="{% url 'recipe_maker:delete_recipe' recipe.pk %}" class="btn btn-danger">Delete</a>
               </div>
               {% endif %}
             </div>
@@ -50,4 +50,17 @@
     </div>
   </div>
 </div>
+
+<!-- Add the code for displaying toast messages -->
+{% if messages %}
+<div id="toast-container" class="toast-top-right">
+    {% for message in messages %}
+    <div class="toast toast-{{ message.tags }}">
+        <button type="button" class="toast-close-button" onclick="this.parentElement.style.display='none'">&times;</button>
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
 {% endblock %}

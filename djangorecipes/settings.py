@@ -36,7 +36,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['djangorecipes.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['djangorecipes.herokuapp.com', 'localhost', '8000-helenbeatri-djangorecip-oi05uki3ojd.ws-eu104.gitpod.io']
 
 
 # Application definition
