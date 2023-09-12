@@ -101,6 +101,11 @@ Registered users can edit their own recipes from the View Recipes page. The page
 ### Favicon and Error Pages:
 A site-wide favicon has been added to provide an image in the browser's tab header for easy identification of the website when multiple tabs are open. A 404 error page has been implemented to redirect users to the main website if they access a broken link. A 403 error page has been created to provide feedback to users when attempting to access unauthorized content, covering pages such as Create Menu, Edit Menu, Delete Menu, Edit Booking, and Delete Booking. A 500 error page has also been implemented to alert users when an internal server error occurs.
 
+**Log in to Admin Panel**:
+
+    - Access the admin panel by going to [http://localhost:8000/admin](http://localhost:8000/admin).
+    - Log in using the superuser credentials you created earlier.
+    - You should be able to access the Django admin panel and manage recipes and other data.
 
 ### Base Setup
 The base setup epic is for all stories needed for the base set up of the application. Without the base setup, the app would not be possible so it was the first epic to be delivered as all other features depend on the completion of the base setup.
@@ -113,6 +118,7 @@ The base setup epic is for all stories needed for the base set up of the applica
 It will have a "Submit" button at the bottom to send the message.
 
 ### Main Page Wireframe 
+
 The main page will have a header section containing the website logo and navigation bar with links to various sections of the website (Home, Categories, Recipes, Login/Register, Contact).
 Below the header, there will be a welcome section with a brief description of the website's purpose and a call-to-action button to encourage users to explore recipes.
 Featured recipes can be displayed in a grid format below the welcome section, with images and titles, possibly with a "View Recipe" button.
@@ -208,7 +214,7 @@ git push - Pushes all committed code to the remote repository on GitHub.
 ## Schema
 * User Authentication:
 The User and Session tables provide authentication functionality for the website. Users can create an account, log in, and log out of the website. Sessions are used to keep users logged in between requests.
-<img src="https://res.cloudinary.com/dvnmyhfxx/image/upload/v1681921545/Untitled_2_v7yzsd.png">
+<img src="media /diagram.png">
 
 
 * Recipe Data:
