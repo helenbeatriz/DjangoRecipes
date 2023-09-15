@@ -30,92 +30,6 @@ Please follow the instructions below to participate in the user testing.
 5. **Share Your Overall Impressions:**
    - After completing the testing scenarios, feel free to share your overall impressions of the website. Is there anything you particularly liked or disliked?
 
-## Testing Scenarios
-
-Please complete the following testing scenarios. After each scenario, provide feedback on your experience, including any issues you encountered, and any suggestions for improvement.
-
-### Scenario 1: User Registration
-
-1. Click on the "Register" button in the navigation bar.
-2. Complete the registration form by providing a valid username, password, and email address.
-3. Confirm your registration and log in.
-
-### Scenario 2: Browsing Recipes
-
-1. Navigate to the "Recipes" page.
-2. Use the search functionality to find a recipe by keyword.
-3. Browse through the list of recipes and click on one to view its details.
-4. Share your experience with searching and browsing recipes. 
-
-### Scenario 3: Adding a Recipe
-
-1. Log in to your account (if not already logged in).
-2. Navigate to the "Add Recipe" page.
-3. Fill out the recipe details, including title, ingredients, instructions, and an image.
-4. Submit the new recipe.
-
-### Scenario 4: Editing a Recipe
-
-1. Log in to your account (if not already logged in).
-2. Navigate to the "Recipes" page.
-3. Find a recipe you added previously and click on it.
-4. Click the "Edit" button.
-5. Make changes to the recipe details and save.
-
-### Scenario 5: Contacting Support
-
-1. Navigate to the "Contact" page.
-2. Use the contact form to send a message to the site admin.
-3. Provide feedback on the contact form's usability and clarity.
-
-## Reporting Issues
-
-To report any issues, usability concerns, or suggestions for improvement, please follow these steps:
-
-1. Contact us, fill the form and click on "Submit" button. 
-2. Get in touch with us. 
-
-
-We appreciate your contributions to improving our website!
-
-## Contact Information
-
-If you have any urgent questions or need assistance during the user testing phase, please feel free to contact Helen Beatriz Cantu de Avila at [helen_beatriz02@outlook.com].
-
-Thank you for participating in the Recipe Sharing Blog user testing!
-
-## Features
-
-### Footer 
-A footer has been added to the bottom of the site, containing links to social media profiles and contact information. The links have aria-labels to assist users with assistive screen reading technology, and open in new tabs to prevent users from leaving the site.
-
-### Create Recipe Page
-A page has been implemented to allow registered users to create and publish their own recipes. The page has a user-friendly form with fields for ingredients, cooking instructions, and images.
-
-### View Recipes Page
-A page has been implemented to allow users to browse through all published recipes. Users can search for recipes by keyword, cuisine, or category, and sort the results by popularity, date, or rating.
-
-### Edit Recipe Page
-Registered users can edit their own recipes from the View Recipes page. The page has a form similar to the Create Recipe page, with pre-filled fields and the ability to upload new images.
-
-### Favicon and Error Pages:
-A site-wide favicon has been added to provide an image in the browser's tab header for easy identification of the website when multiple tabs are open. A 404 error page has been implemented to redirect users to the main website if they access a broken link. A 403 error page has been created to provide feedback to users when attempting to access unauthorized content, covering pages such as Create Menu, Edit Menu, Delete Menu, Edit Booking, and Delete Booking. A 500 error page has also been implemented to alert users when an internal server error occurs.
-
-**Log in to Admin Panel**:
-
-    - Access the admin panel by going to [http://localhost:8000/admin](http://localhost:8000/admin).
-    - Log in using the superuser credentials you created earlier.
-    - You should be able to access the Django admin panel and manage recipes and other data.
-
-### Base Setup
-The base setup epic is for all stories needed for the base set up of the application. Without the base setup, the app would not be possible so it was the first epic to be delivered as all other features depend on the completion of the base setup.
-
-### Contact Form Wireframe
-
- <img src="media /contactwireframe.png">
-
- The contact form will be a simple web form with fields for the user to input their name, email address, subject, and message.
-It will have a "Submit" button at the bottom to send the message.
 
 ### Main Page Wireframe 
 
@@ -140,6 +54,12 @@ At the bottom of the page,  footer with social media links and contact informati
 
 <img src="media /recipewireframe.png ">
 
+### Contact Form Wireframe
+
+ <img src="media /contactwireframe.png">
+
+ The contact form will be a simple web form with fields for the user to input their name, email address, subject, and message.
+It will have a "Submit" button at the bottom to send the message.
 
 ### Technologies Used
 - HTML
@@ -204,12 +124,6 @@ In future releases, a chat and conversations with bloggers would be available.
 
 ### Recipe Management
 * As a user, I want to be able to search and browse through a variety of recipes so that I can discover new dishes to try.
-
-### DeploymentVersion Control
-This recipe sharing blog was developed using Visual Studio Code and version controlled using Git. The code was pushed to a remote repository named 'Gars-Steakhouse' on GitHub. The following Git commands were used to push code to the remote repo:
-git add <file> - Adds the file(s) to the staging area before committing.
-git commit -m “commit message” - Commits changes to the local repository queue.
-git push - Pushes all committed code to the remote repository on GitHub.
 
 ## Schema
 * User Authentication:
@@ -344,12 +258,98 @@ The following models represent the database model structure for the website:
 <img src="https://res.cloudinary.com/dvnmyhfxx/image/upload/v1681911974/recipe_tpq9qw.png">
 
 
+
+### Footer 
+A footer has been added to the bottom of the site, containing links to social media profiles and contact information. The links have aria-labels to assist users with assistive screen reading technology, and open in new tabs to prevent users from leaving the site.
+
+### Create Recipe Page
+A page has been implemented to allow registered users to create and publish their own recipes. The page has a user-friendly form with fields for ingredients, cooking instructions, and images.
+
+### View Recipes Page
+A page has been implemented to allow users to browse through all published recipes. Users can search for recipes by keyword, cuisine, or category, and sort the results by popularity, date, or rating.
+
+### Favicon and Error Pages:
+A site-wide favicon has been added to provide an image in the browser's tab header for easy identification of the website when multiple tabs are open. A 404 error page has been implemented to redirect users to the main website if they access a broken link. A 403 error page has been created to provide feedback to users when attempting to access unauthorized content, covering pages such as Create Menu, Edit Menu, Delete Menu, Edit Booking, and Delete Booking. A 500 error page has also been implemented to alert users when an internal server error occurs.
+
 ### Contact Form
 - User are able to get in touch with the admin of the page and the message in sent to a database. 
 
 <img src="https://res.cloudinary.com/dvnmyhfxx/image/upload/v1681908107/contactus_hrrpfc.png">
 
+### Base Setup
+The base setup epic is for all stories needed for the base set up of the application. Without the base setup, the app would not be possible so it was the first epic to be delivered as all other features depend on the completion of the base setup.
+
+## Testing Scenarios
+
+**Log in to Admin Panel**:
+
+    - Access the admin panel by going to [http://localhost:8000/admin](http://localhost:8000/admin).
+    - Log in using the superuser credentials you created earlier.
+    - You should be able to access the Django admin panel and manage recipes and other data.
+
+### Scenario 1: User Registration
+
+1. Click on the "Register" button in the navigation bar.
+2. Complete the registration form by providing a valid username, password, and email address.
+3. Confirm your registration and log in.
+4. A message saying that you are logged in is going to show up.
+
+### Scenario 2: Browsing Recipes
+
+1. Navigate to the "Recipes" page.
+2. Use the search functionality to find a recipe by keyword.
+3. Browse through the list of recipes and click on one to view its details.
+4. When you click on view you will be able to see recipe, ingredients, image. 
+
+
+### Scenario 3: Adding a Recipe
+
+1. Log in to your account (if not already logged in).
+2. Navigate to the "Add Recipe" page.
+3. Fill out the recipe details, including title, ingredients, instructions, and an image.
+4. Submit the new recipe.
+5. A message saying that you submitted the recipe is going to show up.
+
+
+### Scenario 4: Editing a Recipe
+
+1. Log in to your account (if not already logged in).
+2. Navigate to the "Recipes" page.
+3. Find a recipe you added previously and click on it.
+4. Click the "Edit" button.
+5. Make changes to the recipe details and save.
+6. A message saying that you edited the recipe is going to show up.
+
+
+### Scenario 5: Contacting Support
+
+1. Navigate to the "Contact" page.
+2. Use the contact form to send a message to the site admin.
+3. Provide feedback on the contact form's usability and clarity.
+4. A page saying that the message was sent is going to show up.
+
+## Reporting Issues
+
+To report any issues, usability concerns, or suggestions for improvement, please follow these steps:
+
+1. Contact us, fill the form and click on "Submit" button. 
+2. Get in touch with us. 
+
+We appreciate your contributions to improving our website!
+
+## Contact Information
+
+If you have any urgent questions or need assistance during the user testing phase, please feel free to contact Helen Beatriz Cantu de Avila at [helen_beatriz02@outlook.com].
+
+Thank you for participating in the Recipe Sharing Blog user testing!
+
 ## Deployment
+
+### Deployment Version Control
+This recipe sharing blog was developed using Visual Studio Code and version controlled using Git. The code was pushed to a remote repository named 'Gars-Steakhouse' on GitHub. The following Git commands were used to push code to the remote repo:
+git add <file> - Adds the file(s) to the staging area before committing.
+git commit -m “commit message” - Commits changes to the local repository queue.
+git push - Pushes all committed code to the remote repository on GitHub.
 
 ### Heroku Deployment
 The site was deployed to Heroku. The steps to deploy are as follows:

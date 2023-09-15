@@ -31,8 +31,9 @@
 
       <h2 class="mb-3" id="mission">Our Mission</h2>
       <p class="mb-4">Our mission is to inspire and empower home cooks to create amazing dishes that they can be proud of. We believe that everyone can be a great cook with the right tools, techniques, and inspiration, and we're here to provide all of that and more.</p>
+</div>
+</div>
 
-<main class="main-bg">
   <div class="container-fluid">
     <h2 class="section-heading">Tips posted by our users</h2>
 
@@ -45,9 +46,9 @@
               <div class="card-body">
                 <div class="image-container">
                   {% if "placeholder" in post.featured_image.url %}
-                  <img class="card-img-top" src="https://res.cloudinary.com/dvnmyhfxx/image/upload/v1678383446/cld-sample-4.jpg">
+                  <img class="card-img-top" src="https://res.cloudinary.com/dvnmyhfxx/image/upload/v1678383446/cld-sample-4.jpg" alt="yogurt and breakfast">
                   {% else %}
-                  <img class="card-img-top" src="{{ post.featured_image.url }}">
+                  <img class="card-img-top" src="{{ post.featured_image.url }}" alt="featured image">
                   {% endif %}
                   <div class="image-flash">
                     <p class="author">Author: {{ post.author }}</p>
@@ -70,6 +71,7 @@
         </div>
       </div>
     </div>
+  </div>
 
     {% if is_paginated %}
     <nav aria-label="Page navigation">
@@ -85,6 +87,4 @@
     {% endif %}
 
   </div>
-</main>
-
 {% endblock %}
