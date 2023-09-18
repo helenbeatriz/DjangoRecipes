@@ -281,6 +281,31 @@ The base setup epic is for all stories needed for the base set up of the applica
 
 ## Testing Scenarios
 
+## Validator Testing
+
+All pages were run through the [w3 HTML Validator](https://validator.w3.org/). Initially there were some errors due to stray script tags, misuse of headings within spans and some unclosed elements. All of these issues were corrected and all pages passed validation.
+
+Due to the django templating language code used in the HTML files, these could not be copy and pasted into the validator and due to the secured views, pages with login required or a secured view cannot be validated by direct URI. To test the validation on the files, open the page to validate, right click and view page source. Paste the raw html code into the validator as this will be only the HTML rendered code.
+
+![HTML Validator](media%20/validator.png)
+## Responsiveness
+
+All pages were tested to ensure responsiveness on screen sizes from 320px and upwards as defined in WCAG 2.1 Reflow criteria for responsive design on Chrome, Edge, Firefox and Opera browsers.
+
+Steps to test:
+
+- Open browser and navigate to the [website](https://djangorecipes.herokuapp.com/)
+- Open the developer tools (right click and inspect)
+- Set to responsive and decrease width to 320px
+- Set the zoom to 50%
+-  Click and drag the responsive window to maximum width
+
+Expected:
+
+Website is responsive on all screen sizes and no images are pixelated or stretched. No horizontal scroll is present. No elements overlap.
+
+## Bugs 
+ There seem to be a bug on Html validator for recipes related to "< /p>" tag which I wasnt able to sort out. 
 **Log in to Admin Panel**:
 
     - Access the admin panel by going to [http://localhost:8000/admin](http://localhost:8000/admin).
